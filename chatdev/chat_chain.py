@@ -14,8 +14,14 @@ from chatdev.statistics import get_info
 from chatdev.utils import log_and_print_online, now
 
 
+#def check_bool(s):
+#    return s.lower() == "true"
+
 def check_bool(s):
+    if isinstance(s, bool):
+        return s
     return s.lower() == "true"
+
 
 
 class ChatChain:

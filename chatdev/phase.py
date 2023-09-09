@@ -320,6 +320,47 @@ class DemandAnalysis(Phase):
         return chat_env
 
 
+class IdeaGeneration(Phase):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def update_phase_env(self, chat_env):
+        self.phase_env = {"task": chat_env.env_dict['task_prompt']}
+
+    def update_chat_env(self, chat_env) -> ChatEnv:
+        if len(self.seminar_conclusion) > 0 and "<INFO>" in self.seminar_conclusion:
+            chat_env.env_dict['ideas'] = self.seminar_conclusion.split("<INFO>")[-1].lower().replace(".", "").strip()
+        elif len(self.seminar_conclusion) > 0:
+            chat_env.env_dict['ideas'] = self.seminar_conclusion
+        else:
+            chat_env.env_dict['ideas'] = "I have no idea"
+        log_and_print_online("**[Idea]**:\n\n {}".format(get_info(chat_env.env_dict['directory'],self.log_file)))
+        return chat_env
+
+class ContentGeneration(Phase):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def update_phase_env(self, chat_env):
+        self.phase_env = {
+            "task": chat_env.env_dict['task_prompt'],
+            "ideas": chat_env.env_dict['ideas']
+        }
+
+    def update_chat_env(self, chat_env) -> ChatEnv:
+        if len(self.seminar_conclusion) > 0 and "<INFO>" in self.seminar_conclusion:
+            chat_env.env_dict['content'] = self.seminar_conclusion.split("<INFO>")[-1].lower().replace(".", "")
+        elif len(self.seminar_conclusion) > 0:
+            chat_env.env_dict['content'] = self.seminar_conclusion
+        else:
+            chat_env.env_dict['content'] = "No content sorry"
+        
+        # Assuming log_and_print_online and get_info are defined elsewhere in your code
+        log_and_print_online("**[content]**: \n\n {}".format(get_info(chat_env.env_dict['directory'],self.log_filepath)))
+        
+        return chat_env
+
+
 class LanguageChoose(Phase):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

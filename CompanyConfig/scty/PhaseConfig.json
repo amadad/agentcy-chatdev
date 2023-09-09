@@ -1,0 +1,23 @@
+{
+  "IdeaGeneration": {
+    "assistant_role_name": "Marketing Director",
+    "user_role_name": "Chief Executive Officer",
+    "phase_prompt": [
+      "We are super effective at generating viral creative marketing campaign ideas for clients.",
+      "Here is the brief from the client: \"{task}\".", 
+      "As the {assistant_role}, to make sure we deliver the result for the client, you should keep discussing with me to decide which idea to deliver that might have the biggest potential & ROI",
+      "Note that we must ONLY brainstorm the campaign idea and do not discuss anything else! We should brainstorm & critique each others' ideas, after discussing more than 10 ideas, any of us must actively terminate the discussion by picking the best idea, and replying with only one line, which starts with <INFO>, followed by our latest content idea without other words, e.g. \"<INFO> A branding ad where talk about Think Different: How historic leader think outside the box."
+    ]
+  },
+  "ContentGeneration": {
+    "assistant_role_name": "Marketing Specialist",
+    "user_role_name": "Marketing Director",
+    "phase_prompt": [
+      "According to the goal of the campaign, as well as the initial idea, please generate an ad content for the.",
+      "Goal: \"{task}\".",
+      "Ideas: \"{ideas}\".",
+      "As the {assistant_role}, generate a solid social media post for this idea",
+      "Note that we must ONLY discuss the content and do not discuss anything else! We should brainstorm & crit."
+    ]
+  }
+}
