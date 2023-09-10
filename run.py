@@ -15,6 +15,7 @@ import argparse
 import logging
 import os
 import sys
+import streamlit as st
 
 from camel.typing import ModelType
 
@@ -70,48 +71,70 @@ parser.add_argument('--model', type=str, default="GPT_3_5_TURBO",
                     help="GPT Model, choose from {'GPT_3_5_TURBO','GPT_4','GPT_4_32K'}")
 args = parser.parse_args()
 
-# Start ChatDev
+def main():
+    st.title("ChatDev Interface")
 
-# ----------------------------------------
-#          Init ChatChain
-# ----------------------------------------
-config_path, config_phase_path, config_role_path = get_config(args.config)
-args2type = {'GPT_3_5_TURBO': ModelType.GPT_3_5_TURBO, 'GPT_4': ModelType.GPT_4, 'GPT_4_32K': ModelType.GPT_4_32k}
-chat_chain = ChatChain(config_path=config_path,
-                       config_phase_path=config_phase_path,
-                       config_role_path=config_role_path,
-                       task_prompt=args.task,
-                       project_name=args.name,
-                       org_name=args.org,
-                       model_type=args2type[args.model])
+    # Configuration options
+    config_option = st.selectbox("Choose a config:", ["Default", "scty"])
+    org_option = st.text_input("Organization Name:", "DefaultOrganization")
+    task_option = st.text_input("Task:", "Marketing activity for ideation.")
+    name_option = st.text_input("Campaign Name:", "Gomoku")
+    model_option = st.selectbox("GPT Model:", ["GPT_3_5_TURBO", "GPT_4", "GPT_4_32K"])
 
-# ----------------------------------------
-#          Init Log
-# ----------------------------------------
-logging.basicConfig(filename=chat_chain.log_filepath, level=logging.INFO,
-                    format='[%(asctime)s %(levelname)s] %(message)s',
-                    datefmt='%Y-%d-%m %H:%M:%S', encoding="utf-8")
+    if st.button("Start ChatDev"):
+        # Placeholder for output
+        output_placeholder = st.empty()
+        output_placeholder.text("Processing...")
 
-# ----------------------------------------
-#          Pre Processing
-# ----------------------------------------
+        # ----------------------------------------
+        #          Init ChatChain
+        # ----------------------------------------
 
-chat_chain.pre_processing()
+        config_path, config_phase_path, config_role_path = get_config(config_option)
+        args2type = {'GPT_3_5_TURBO': ModelType.GPT_3_5_TURBO, 'GPT_4': ModelType.GPT_4, 'GPT_4_32K': ModelType.GPT_4_32k}
+        chat_chain = ChatChain(config_path=config_path,
+                               config_phase_path=config_phase_path,
+                               config_role_path=config_role_path,
+                               task_prompt=task_option,
+                               project_name=name_option,
+                               org_name=org_option,
+                               model_type=args2type[model_option])
 
-# ----------------------------------------
-#          Personnel Recruitment
-# ----------------------------------------
+        # ----------------------------------------
+        #          Init Log
+        # ----------------------------------------
+        logging.basicConfig(filename=chat_chain.log_filepath, level=logging.INFO,
+                            format='[%(asctime)s %(levelname)s] %(message)s',
+                            datefmt='%Y-%d-%m %H:%M:%S', encoding="utf-8")
 
-chat_chain.make_recruitment()
+        # ----------------------------------------
+        #          Pre Processing
+        # ----------------------------------------
+        chat_chain.pre_processing()
 
-# ----------------------------------------
-#          Chat Chain
-# ----------------------------------------
+        # ----------------------------------------
+        #          Personnel Recruitment
+        # ----------------------------------------
+        chat_chain.make_recruitment()
 
-chat_chain.execute_chain()
+        # ----------------------------------------
+        #          Chat Chain
+        # ----------------------------------------
+        chat_chain.execute_chain()
 
-# ----------------------------------------
-#          Post Processing
-# ----------------------------------------
+        # ----------------------------------------
+        #          Post Processing
+        # ----------------------------------------
+        chat_chain.post_processing()
 
-chat_chain.post_processing()
+      # Update the placeholder with the final output
+        output_placeholder.text("This is the final output.")
+
+        # Display the log link
+        st.markdown(f"[View Log]({chat_chain.log_filepath})")
+
+    else:
+        st.write("This is where the output will be displayed.")
+
+if __name__ == "__main__":
+    main()

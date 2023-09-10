@@ -1,0 +1,29 @@
+Task:
+Concept ideas for a women's health supplement launch
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Marketing director, Marketing specalist
+
+Modality:
+
+
+Ideas:
+ A social media challenge where women share their fitness journeys and how the supplement has helped them achieve their health goals.
+
+Language:
+
+
+Code_Version:
+1.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

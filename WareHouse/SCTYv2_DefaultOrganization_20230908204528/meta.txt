@@ -1,0 +1,29 @@
+Task:
+Drive more people to sign up for a productized subscription for strategy, marketing, design services
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Marketing director, Marketing specalist
+
+Modality:
+
+
+Ideas:
+ A social media contest where participants share their success stories using the client's services, with the chance to win a free subscription.
+
+Language:
+
+
+Code_Version:
+1.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

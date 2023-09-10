@@ -1,0 +1,29 @@
+Task:
+Create content launch ideas for a public health apparel brand named 'by SCTY'
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Marketing director, Marketing specalist
+
+Modality:
+
+
+Ideas:
+ A video campaign showcasing the importance of public health and how 'by SCTY' apparel can help individuals stay safe and protected.
+
+Language:
+
+
+Code_Version:
+1.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

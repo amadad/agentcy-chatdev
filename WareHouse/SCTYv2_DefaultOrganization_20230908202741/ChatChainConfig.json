@@ -1,0 +1,27 @@
+{
+  "chain": [
+    {
+      "phase": "IdeaGeneration",
+      "phaseType": "SimplePhase",
+      "max_turn_step": -1,
+      "need_reflect": true
+    },
+    {
+      "phase": "ContentGeneration",
+      "phaseType": "SimplePhase",
+      "max_turn_step": -1,
+      "need_reflect": true
+    }
+  ],
+  "recruitments": [
+    "Chief Executive Officer",
+    "Counselor",
+    "Marketing Director",
+    "Marketing Specialist"
+  ],
+  "clear_structure": true,
+  "brainstorming": false,
+  "gui_design": true,
+  "git_management": false,
+  "self_improve": false
+}

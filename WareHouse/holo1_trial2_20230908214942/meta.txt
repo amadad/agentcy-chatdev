@@ -1,0 +1,29 @@
+Task:
+go to market for nutritional supplement powder like athletic greens
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Marketing director, Marketing specalist
+
+Modality:
+
+
+Ideas:
+ A social media campaign showcasing before and after transformations of individuals who have incorporated the supplement powder into their daily routine, highlighting the positive impact on their overall health and fitness goals.
+
+Language:
+
+
+Code_Version:
+1.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+
