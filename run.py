@@ -15,12 +15,20 @@ import argparse
 import logging
 import os
 import sys
+import streamlit as st
+import openai
 
+from dotenv import load_dotenv
 from camel.typing import ModelType
 
+
+
+
+load_dotenv()
 root = os.path.dirname(__file__)
 sys.path.append(root)
 
+openai.api_key = os.environ['OPENAI_API_KEY']
 from chatdev.chat_chain import ChatChain
 
 

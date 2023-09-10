@@ -1,0 +1,76 @@
+[2023-10-09 13:27:20 INFO] **[Preprocessing]**
+
+**ChatDev Starts** (20230910132720)
+
+**Timestamp**: 20230910132720
+
+**config_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Marketing/ChatChainConfig.json
+
+**config_phase_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Marketing/PhaseConfig.json
+
+**config_role_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Marketing/RoleConfig.json
+
+**task_prompt**: Campaign idea for a public health inspired apparel brand named by SCTY
+
+**project_name**: by SCTY
+
+**Log File**: /Users/amadad/Projects/ChatDev/WareHouse/by SCTY_DefaultOrganization_20230910132720.log
+
+**ChatDevConfig**:
+ ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+**ChatGPTConfig**:
+ ChatGPTConfig(temperature=0.2, top_p=1.0, n=1, stream=False, stop=None, max_tokens=None, presence_penalty=0.0, frequency_penalty=0.0, logit_bias={}, user='')
+
+
+
+[2023-10-09 13:27:20 INFO] flask app.py did not start for online log
+[2023-10-09 13:27:20 INFO] System: **[chatting]**
+
+| Parameter | Value |
+| --- | --- |
+| **task_prompt** | Campaign idea for a public health inspired apparel brand named by SCTY |
+| **need_reflect** | True |
+| **assistant_role_name** | Marketing Director |
+| **user_role_name** | Chief Executive Officer |
+| **phase_prompt** | We are super effective at generating viral creative marketing campaign ideas for clients. Here is the brief from the client: "{task}". As the {assistant_role}, to make sure we deliver the result for the client, you should keep discussing with me to decide which idea we to deliver that might have the biggest potential &amp; ROI Note that we must ONLY brainstorm the campaign idea and do not discuss anything else! We should brainstorm &amp; critique on each other's idea, after discussed more than 10 ideas, any of us must actively terminate the discussion by picking up the best idea, and replying with only one line, which starts with a single word , followed by our latest content idea without any other words, e.g., " A branding ads where we talk about Think Different: How historic leaders think out of box to drive progress, and that's the culture our client represent". |
+| **phase_name** | IdeaGeneration |
+| **assistant_role_prompt** | {chatdev_prompt} You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client. You direct ChatDev's marketing &amp; creative ad campaign, develop world class marketing campaign idea that define client's brand.  Here is a new client's campaign brief: {task}. To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs. |
+| **user_role_prompt** | {chatdev_prompt} You are Chief Executive Officer. Now, we are both working at ChatDev and we share a common interest in collaborating to successfully complete a task assigned by a new customer. Your main responsibilities include being an active decision-maker on users' demands and other key policy issues, leader, manager, and executor. Your decision-making role involves high-level decisions about policy and strategy; and your communicator role can involve speaking to the organization's management and employees. Here is a new customer's task: {task}. To complete the task, I will give you one or more instructions, and you must help me to write a specific solution that appropriately solves the requested instruction based on your expertise and my needs. |
+| **chat_turn_limit** | 10 |
+| **placeholders** | {'task': 'Campaign idea for a public health inspired apparel brand named by SCTY'} |
+| **model_type** | ModelType.GPT_3_5_TURBO |
+
+[2023-10-09 13:27:20 INFO] flask app.py did not start for online log
+[2023-10-09 13:27:20 INFO] System: **[RolePlaying]**
+
+| Parameter | Value |
+| --- | --- |
+| **assistant_role_name** | Marketing Director |
+| **user_role_name** | Chief Executive Officer |
+| **assistant_role_prompt** | {chatdev_prompt} You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client. You direct ChatDev's marketing &amp; creative ad campaign, develop world class marketing campaign idea that define client's brand.  Here is a new client's campaign brief: {task}. To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs. |
+| **user_role_prompt** | {chatdev_prompt} You are Chief Executive Officer. Now, we are both working at ChatDev and we share a common interest in collaborating to successfully complete a task assigned by a new customer. Your main responsibilities include being an active decision-maker on users' demands and other key policy issues, leader, manager, and executor. Your decision-making role involves high-level decisions about policy and strategy; and your communicator role can involve speaking to the organization's management and employees. Here is a new customer's task: {task}. To complete the task, I will give you one or more instructions, and you must help me to write a specific solution that appropriately solves the requested instruction based on your expertise and my needs. |
+| **task_prompt** | Campaign idea for a public health inspired apparel brand named by SCTY |
+| **with_task_specify** | False |
+| **model_type** | ModelType.GPT_3_5_TURBO |
+
+[2023-10-09 13:27:20 INFO] flask app.py did not start for online log
+[2023-10-09 13:27:20 INFO] Chief Executive Officer: **[Start Chat]**
+
+[ChatDev is a software company powered by multiple intelligent agents, such as chief executive officer, chief human resources officer, chief product officer, chief technology officer, etc, with a multi-agent organizational structure and the mission of "changing the digital world through programming".
+You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client.
+You direct ChatDev's marketing & creative ad campaign, develop world class marketing campaign idea that define client's brand. 
+Here is a new client's campaign brief: Campaign idea for a public health inspired apparel brand named by SCTY.
+To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs.]
+
+We are super effective at generating viral creative marketing campaign ideas for clients.
+
+Here is the brief from the client: "Campaign idea for a public health inspired apparel brand named by SCTY".
+
+As the Marketing Director, to make sure we deliver the result for the client, you should keep discussing with me to decide which idea we to deliver that might have the biggest potential & ROI
+
+Note that we must ONLY brainstorm the campaign idea and do not discuss anything else! We should brainstorm & critique on each other's idea, after discussed more than 10 ideas, any of us must actively terminate the discussion by picking up the best idea, and replying with only one line, which starts with a single word <INFO>, followed by our latest content idea without any other words, e.g., "<INFO> A branding ads where we talk about Think Different: How historic leaders think out of box to drive progress, and that's the culture our client represent".
+
+[2023-10-09 13:27:20 INFO] flask app.py did not start for online log

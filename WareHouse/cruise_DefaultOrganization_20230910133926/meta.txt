@@ -1,0 +1,29 @@
+Task:
+cruise line launch
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Marketing director, Marketing specalist
+
+Modality:
+
+
+Ideas:
+ A branding ad campaign highlighting the unique activities and entertainment options available on the cruise.
+
+Language:
+
+
+Code_Version:
+1.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+
