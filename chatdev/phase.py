@@ -208,7 +208,9 @@ class Phase(ABC):
         elif phase_name == "DemandAnalysis":
             question = """Answer their final product modality in the discussion without any other words, e.g., "PowerPoint" """
         elif phase_name == "IdeaGeneration":
-             question = """Conclude three most creative and imaginative brainstorm ideas from the whole discussion, in the format: "1) *; 2) *; 3) *; where '*' represents a suggestion." """
+            question = """Conclude three most creative and imaginative brainstorm ideas from the whole discussion, in the format: "1) *; 2) *; 3) *; where '*' represents a suggestion." """
+        # elif phase_name in [PhaseType.BRAINSTORMING]:
+        #     question = """Conclude three most creative and imaginative brainstorm ideas from the whole discussion, in the format: "1) *; 2) *; 3) *; where '*' represents a suggestion." """
         elif phase_name == "LanguageChoose":
             question = """Conclude the programming language being discussed for software development, in the format: "*" where '*' represents a programming language." """
         elif phase_name == "EnvironmentDoc":
@@ -359,7 +361,6 @@ class ContentGeneration(Phase):
         log_and_print_online("**[content]**: \n\n {}".format(get_info(chat_env.env_dict['directory'],self.log_filepath)))
         
         return chat_env
-
 
 class LanguageChoose(Phase):
     def __init__(self, **kwargs):

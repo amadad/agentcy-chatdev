@@ -1,0 +1,29 @@
+Task:
+Get clients for a creative services company focusing on b2b clients
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+Roster:
+Chief Executive Officer, Counselor, Marketing director, Marketing specalist
+
+Modality:
+
+
+Ideas:
+ An interactive webinar series showcasing industry experts discussing the latest trends and innovations in the B2B creative services space.
+
+Language:
+
+
+Code_Version:
+1.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

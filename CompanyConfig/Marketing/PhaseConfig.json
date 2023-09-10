@@ -1,6 +1,6 @@
 {
   "IdeaGeneration": {
-      "assistant_role_name": "Marketing director",
+      "assistant_role_name": "Marketing Director",
       "user_role_name": "Chief Executive Officer",
       "phase_prompt": [
         "We are super effective at generating viral creative marketing campaign ideas for clients.",
@@ -10,8 +10,8 @@
       ]
     },
     "ContentGeneration": {
-      "assistant_role_name": "Marketing specalist",
-      "user_role_name": "Marketing director",
+      "assistant_role_name": "Marketing Specalist",
+      "user_role_name": "Marketing Director",
       "phase_prompt": [
         "According to the goal of the campaign, as well as the initial idea, please generate an ad content for the campaign",
         "Goal: \"{task}\".",

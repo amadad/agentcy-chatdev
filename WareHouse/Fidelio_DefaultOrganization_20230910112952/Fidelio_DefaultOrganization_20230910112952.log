@@ -1,0 +1,275 @@
+[2023-10-09 11:29:52 INFO] **[Preprocessing]**
+
+**ChatDev Starts** (20230910112952)
+
+**Timestamp**: 20230910112952
+
+**config_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Marketing/ChatChainConfig.json
+
+**config_phase_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Marketing/PhaseConfig.json
+
+**config_role_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Marketing/RoleConfig.json
+
+**task_prompt**: Get clients for a creative services company focusing on b2b clients
+
+**project_name**: Fidelio
+
+**Log File**: /Users/amadad/Projects/ChatDev/WareHouse/Fidelio_DefaultOrganization_20230910112952.log
+
+**ChatDevConfig**:
+ ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+**ChatGPTConfig**:
+ ChatGPTConfig(temperature=0.2, top_p=1.0, n=1, stream=False, stop=None, max_tokens=None, presence_penalty=0.0, frequency_penalty=0.0, logit_bias={}, user='')
+
+
+
+[2023-10-09 11:29:52 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:52 INFO] System: **[chatting]**
+
+| Parameter | Value |
+| --- | --- |
+| **task_prompt** | Get clients for a creative services company focusing on b2b clients |
+| **need_reflect** | True |
+| **assistant_role_name** | Marketing Director |
+| **user_role_name** | Chief Executive Officer |
+| **phase_prompt** | We are super effective at generating viral creative marketing campaign ideas for clients. Here is the brief from the client: "{task}". As the {assistant_role}, to make sure we deliver the result for the client, you should keep discussing with me to decide which idea we to deliver that might have the biggest potential &amp; ROI Note that we must ONLY brainstorm the campaign idea and do not discuss anything else! We should brainstorm &amp; critique on each other's idea, after discussed more than 10 ideas, any of us must actively terminate the discussion by picking up the best idea, and replying with only one line, which starts with a single word , followed by our latest content idea without any other words, e.g., " A branding ads where we talk about Think Different: How historic leaders think out of box to drive progress, and that's the culture our client represent". |
+| **phase_name** | IdeaGeneration |
+| **assistant_role_prompt** | {chatdev_prompt} You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client. You direct ChatDev's marketing &amp; creative ad campaign, develop world class marketing campaign idea that define client's brand.  Here is a new client's campaign brief: {task}. To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs. |
+| **user_role_prompt** | {chatdev_prompt} You are Chief Executive Officer. Now, we are both working at ChatDev and we share a common interest in collaborating to successfully complete a task assigned by a new customer. Your main responsibilities include being an active decision-maker on users' demands and other key policy issues, leader, manager, and executor. Your decision-making role involves high-level decisions about policy and strategy; and your communicator role can involve speaking to the organization's management and employees. Here is a new customer's task: {task}. To complete the task, I will give you one or more instructions, and you must help me to write a specific solution that appropriately solves the requested instruction based on your expertise and my needs. |
+| **chat_turn_limit** | 10 |
+| **placeholders** | {'task': 'Get clients for a creative services company focusing on b2b clients'} |
+| **model_type** | ModelType.GPT_3_5_TURBO |
+
+[2023-10-09 11:29:52 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:52 INFO] System: **[RolePlaying]**
+
+| Parameter | Value |
+| --- | --- |
+| **assistant_role_name** | Marketing Director |
+| **user_role_name** | Chief Executive Officer |
+| **assistant_role_prompt** | {chatdev_prompt} You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client. You direct ChatDev's marketing &amp; creative ad campaign, develop world class marketing campaign idea that define client's brand.  Here is a new client's campaign brief: {task}. To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs. |
+| **user_role_prompt** | {chatdev_prompt} You are Chief Executive Officer. Now, we are both working at ChatDev and we share a common interest in collaborating to successfully complete a task assigned by a new customer. Your main responsibilities include being an active decision-maker on users' demands and other key policy issues, leader, manager, and executor. Your decision-making role involves high-level decisions about policy and strategy; and your communicator role can involve speaking to the organization's management and employees. Here is a new customer's task: {task}. To complete the task, I will give you one or more instructions, and you must help me to write a specific solution that appropriately solves the requested instruction based on your expertise and my needs. |
+| **task_prompt** | Get clients for a creative services company focusing on b2b clients |
+| **with_task_specify** | False |
+| **model_type** | ModelType.GPT_3_5_TURBO |
+
+[2023-10-09 11:29:52 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:52 INFO] Chief Executive Officer: **[Start Chat]**
+
+[ChatDev is a software company powered by multiple intelligent agents, such as chief executive officer, chief human resources officer, chief product officer, chief technology officer, etc, with a multi-agent organizational structure and the mission of "changing the digital world through programming".
+You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client.
+You direct ChatDev's marketing & creative ad campaign, develop world class marketing campaign idea that define client's brand. 
+Here is a new client's campaign brief: Get clients for a creative services company focusing on b2b clients.
+To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs.]
+
+We are super effective at generating viral creative marketing campaign ideas for clients.
+
+Here is the brief from the client: "Get clients for a creative services company focusing on b2b clients".
+
+As the Marketing Director, to make sure we deliver the result for the client, you should keep discussing with me to decide which idea we to deliver that might have the biggest potential & ROI
+
+Note that we must ONLY brainstorm the campaign idea and do not discuss anything else! We should brainstorm & critique on each other's idea, after discussed more than 10 ideas, any of us must actively terminate the discussion by picking up the best idea, and replying with only one line, which starts with a single word <INFO>, followed by our latest content idea without any other words, e.g., "<INFO> A branding ads where we talk about Think Different: How historic leaders think out of box to drive progress, and that's the culture our client represent".
+
+[2023-10-09 11:29:52 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:54 INFO] **[OpenAI_Usage_Info Receive]**
+prompt_tokens: 355
+completion_tokens: 56
+total_tokens: 411
+
+
+[2023-10-09 11:29:54 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:54 INFO] Marketing Director: **Marketing Director<->Chief Executive Officer on : IdeaGeneration, turn 0**
+
+[ChatDev is a software company powered by multiple intelligent agents, such as chief executive officer, chief human resources officer, chief product officer, chief technology officer, etc, with a multi-agent organizational structure and the mission of "changing the digital world through programming".
+You are Chief Executive Officer. Now, we are both working at ChatDev and we share a common interest in collaborating to successfully complete a task assigned by a new customer.
+Your main responsibilities include being an active decision-maker on users' demands and other key policy issues, leader, manager, and executor. Your decision-making role involves high-level decisions about policy and strategy; and your communicator role can involve speaking to the organization's management and employees.
+Here is a new customer's task: Get clients for a creative services company focusing on b2b clients.
+To complete the task, I will give you one or more instructions, and you must help me to write a specific solution that appropriately solves the requested instruction based on your expertise and my needs.]
+
+Sure, let's start brainstorming some creative marketing campaign ideas for our client focusing on B2B clients. Here's an idea to kick things off:
+
+<INFO> An interactive webinar series showcasing industry experts discussing the latest trends and innovations in the B2B creative services space.
+
+[2023-10-09 11:29:54 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:54 INFO] **[Seminar Conclusion]**:
+
+ Sure, let's start brainstorming some creative marketing campaign ideas for our client focusing on B2B clients. Here's an idea to kick things off:
+
+<INFO> An interactive webinar series showcasing industry experts discussing the latest trends and innovations in the B2B creative services space.
+
+[2023-10-09 11:29:54 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:54 INFO] **[Idea]**:
+
+ 
+
+💰**cost**=$0.001289
+
+🔨**version_updates**=-1
+
+📃**num_code_files**=0
+
+🏞**num_png_files**=0
+
+📚**num_doc_files**=4
+
+📃**code_lines**=0
+
+📋**env_lines**=-1
+
+📒**manual_lines**=-1
+
+🗣**num_utterances**=2
+
+🤔**num_self_reflections**=0
+
+❓**num_prompt_tokens**=355
+
+❗**num_completion_tokens**=56
+
+🌟**num_total_tokens**=411
+
+[2023-10-09 11:29:54 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:54 INFO] System: **[chatting]**
+
+| Parameter | Value |
+| --- | --- |
+| **task_prompt** | Get clients for a creative services company focusing on b2b clients |
+| **need_reflect** | True |
+| **assistant_role_name** | Marketing Specalist |
+| **user_role_name** | Marketing Director |
+| **phase_prompt** | According to the goal of the campaign, as well as the initial idea, please generate an ad content for the campaign Goal: "{task}". Ideas: "{ideas}". As the {assistant_role}, generate a solid social media post for this idea Note that we must ONLY discuss the content and do not discuss anything else! We should brainstorm &amp; critique on each other's idea, and once we did 2 iterations of content, any of us must actively terminate the discussion by replying only one line using the format: " " where "" represents the content generated. |
+| **phase_name** | ContentGeneration |
+| **assistant_role_prompt** | {chatdev_prompt} You are the marketing specialist; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client. Your main responsibility is writting world class content that resonate with people and reflect client's brand &amp; marketing campaign goal To complete the task, I will give you one or more instructions, and you must generate one of the best content you've ever written in your life that touch people's heart. |
+| **user_role_prompt** | {chatdev_prompt} You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client. You direct ChatDev's marketing &amp; creative ad campaign, develop world class marketing campaign idea that define client's brand.  Here is a new client's campaign brief: {task}. To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs. |
+| **chat_turn_limit** | 10 |
+| **placeholders** | {'task': 'Get clients for a creative services company focusing on b2b clients', 'ideas': ' An interactive webinar series showcasing industry experts discussing the latest trends and innovations in the B2B creative services space.'} |
+| **model_type** | ModelType.GPT_3_5_TURBO |
+
+[2023-10-09 11:29:54 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:54 INFO] System: **[RolePlaying]**
+
+| Parameter | Value |
+| --- | --- |
+| **assistant_role_name** | Marketing Specalist |
+| **user_role_name** | Marketing Director |
+| **assistant_role_prompt** | {chatdev_prompt} You are the marketing specialist; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client. Your main responsibility is writting world class content that resonate with people and reflect client's brand &amp; marketing campaign goal To complete the task, I will give you one or more instructions, and you must generate one of the best content you've ever written in your life that touch people's heart. |
+| **user_role_prompt** | {chatdev_prompt} You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client. You direct ChatDev's marketing &amp; creative ad campaign, develop world class marketing campaign idea that define client's brand.  Here is a new client's campaign brief: {task}. To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs. |
+| **task_prompt** | Get clients for a creative services company focusing on b2b clients |
+| **with_task_specify** | False |
+| **model_type** | ModelType.GPT_3_5_TURBO |
+
+[2023-10-09 11:29:54 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:54 INFO] Marketing Director: **[Start Chat]**
+
+[ChatDev is a software company powered by multiple intelligent agents, such as chief executive officer, chief human resources officer, chief product officer, chief technology officer, etc, with a multi-agent organizational structure and the mission of "changing the digital world through programming".
+You are the marketing specialist; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client.
+Your main responsibility is writting world class content that resonate with people and reflect client's brand & marketing campaign goal
+To complete the task, I will give you one or more instructions, and you must generate one of the best content you've ever written in your life that touch people's heart.]
+
+According to the goal of the campaign, as well as the initial idea, please generate an ad content for the campaign
+
+Goal: "Get clients for a creative services company focusing on b2b clients".
+
+Ideas: " An interactive webinar series showcasing industry experts discussing the latest trends and innovations in the B2B creative services space.".
+
+As the Marketing Specalist, generate a solid social media post for this idea
+
+Note that we must ONLY discuss the content and do not discuss anything else! We should brainstorm & critique on each other's idea, and once we did 2 iterations of content, any of us must actively terminate the discussion by replying only one line using the format: "<INFO> *" where "*" represents the content generated.
+
+[2023-10-09 11:29:54 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:55 INFO] **[OpenAI_Usage_Info Receive]**
+prompt_tokens: 302
+completion_tokens: 94
+total_tokens: 396
+
+
+[2023-10-09 11:29:55 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:55 INFO] Marketing Specalist: **Marketing Specalist<->Marketing Director on : ContentGeneration, turn 0**
+
+[ChatDev is a software company powered by multiple intelligent agents, such as chief executive officer, chief human resources officer, chief product officer, chief technology officer, etc, with a multi-agent organizational structure and the mission of "changing the digital world through programming".
+You are the marketing director; We are both working at ChatDev. We share a common interest in collaborating to successfully complete a task assigned by a new client.
+You direct ChatDev's marketing & creative ad campaign, develop world class marketing campaign idea that define client's brand. 
+Here is a new client's campaign brief: Get clients for a creative services company focusing on b2b clients.
+To complete the task, you must write a response that appropriately solves the requested instruction based on your expertise and client's needs.]
+
+<INFO> "Join us for an exclusive webinar series where industry experts dive deep into the world of B2B creative services. Discover the latest trends, innovative strategies, and success stories that will transform your business. Don't miss out on this opportunity to gain valuable insights and connect with like-minded professionals. Register now and unlock the secrets to success in the B2B creative services space. #webinar #B2B #creativeservices #industryexperts"
+
+[2023-10-09 11:29:55 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:55 INFO] **[Seminar Conclusion]**:
+
+ <INFO> "Join us for an exclusive webinar series where industry experts dive deep into the world of B2B creative services. Discover the latest trends, innovative strategies, and success stories that will transform your business. Don't miss out on this opportunity to gain valuable insights and connect with like-minded professionals. Register now and unlock the secrets to success in the B2B creative services space. #webinar #B2B #creativeservices #industryexperts"
+
+[2023-10-09 11:29:55 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:55 INFO] **[content]**: 
+
+ 
+
+💰**cost**=$0.002571
+
+🔨**version_updates**=-1
+
+📃**num_code_files**=0
+
+🏞**num_png_files**=0
+
+📚**num_doc_files**=4
+
+📃**code_lines**=0
+
+📋**env_lines**=-1
+
+📒**manual_lines**=-1
+
+🗣**num_utterances**=4
+
+🤔**num_self_reflections**=0
+
+❓**num_prompt_tokens**=657
+
+❗**num_completion_tokens**=150
+
+🌟**num_total_tokens**=807
+
+[2023-10-09 11:29:55 INFO] flask app.py did not start for online log
+[2023-10-09 11:29:55 INFO] **[Post Info]**
+
+Software Info: 
+
+💰**cost**=$0.002571
+
+🔨**version_updates**=2.0
+
+📃**num_code_files**=0
+
+🏞**num_png_files**=0
+
+📚**num_doc_files**=5
+
+📃**code_lines**=0
+
+📋**env_lines**=-1
+
+📒**manual_lines**=-1
+
+🗣**num_utterances**=4
+
+🤔**num_self_reflections**=0
+
+❓**num_prompt_tokens**=657
+
+❗**num_completion_tokens**=150
+
+🌟**num_total_tokens**=807
+
+🕑**duration**=3.00s
+
+ChatDev Starts (20230910112952)
+
+ChatDev Ends (20230910112955)
+
+
+
+[2023-10-09 11:29:55 INFO] flask app.py did not start for online log
