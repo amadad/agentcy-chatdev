@@ -4,3 +4,4 @@
 .vscode
 *workspace
 .venv
+.env
