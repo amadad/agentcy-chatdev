@@ -77,3 +77,6 @@ wrapt==1.15.0
 yapf==0.32.0
 yarl==1.9.2
 zipp==3.16.2
+langchain
+bs4
+pydantic

@@ -1,0 +1,29 @@
+Task:
+covid-19 seasonality
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: True
+
+
+Roster:
+Chief Executive Officer, Innovation Director, Counselor, Marketing director, Marketing specalist
+
+Modality:
+
+
+Ideas:
+ A social media campaign highlighting the different seasons and how our client's products/services can be enjoyed during each season, with a focus on safety measures during the COVID-19 pandemic.
+
+Language:
+
+
+Code_Version:
+1.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

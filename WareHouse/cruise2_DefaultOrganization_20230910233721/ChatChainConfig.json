@@ -1,0 +1,34 @@
+{
+  "chain": [
+    {
+      "phase": "ResearchGeneration",
+      "phaseType": "SimplePhase",
+      "max_turn_step": 0,
+      "need_reflect": "True"
+    },       
+    {
+      "phase": "IdeaGeneration",
+      "phaseType": "SimplePhase",
+      "max_turn_step": -1,
+      "need_reflect": "True"
+    },    
+    {
+      "phase": "ContentGeneration",
+      "phaseType": "SimplePhase",
+      "max_turn_step": -1,
+      "need_reflect": "True"
+    }
+  ],
+  "recruitments": [
+    "Chief Executive Officer",
+    "Innovation Director",
+    "Counselor",
+    "Marketing director",
+    "Marketing specalist"
+  ],
+  "clear_structure": "True",
+  "brainstorming": "True",
+  "gui_design": "False",
+  "git_management": "False",
+  "self_improve": "False"
+}

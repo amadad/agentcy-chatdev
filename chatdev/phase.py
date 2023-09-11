@@ -8,6 +8,7 @@ from camel.typing import TaskType, ModelType
 from chatdev.chat_env import ChatEnv
 from chatdev.statistics import get_info
 from chatdev.utils import log_and_print_online, log_arguments
+from chatdev import tools
 
 
 class Phase(ABC):
@@ -207,8 +208,6 @@ class Phase(ABC):
             question = """Answer their final discussed conclusion (Yes or No) in the discussion without any other words, e.g., "Yes" """
         elif phase_name == "DemandAnalysis":
             question = """Answer their final product modality in the discussion without any other words, e.g., "PowerPoint" """
-        elif phase_name == "IdeaGeneration":
-            question = """Conclude three most creative and imaginative brainstorm ideas from the whole discussion, in the format: "1) *; 2) *; 3) *; where '*' represents a suggestion." """
         # elif phase_name in [PhaseType.BRAINSTORMING]:
         #     question = """Conclude three most creative and imaginative brainstorm ideas from the whole discussion, in the format: "1) *; 2) *; 3) *; where '*' represents a suggestion." """
         elif phase_name == "LanguageChoose":
@@ -321,13 +320,59 @@ class DemandAnalysis(Phase):
             chat_env.env_dict['modality'] = self.seminar_conclusion.split("<INFO>")[-1].lower().replace(".", "").strip()
         return chat_env
 
+class ResearchGeneration(Phase):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
+
+    def execute(self, chat_env, *args, **kwargs):
+        task = chat_env.env_dict.get("task_prompt")
+
+        # Step 1: Search
+        search_results = tools.search(task)
+
+        # Assuming search_results is a list of URLs or has a structure where you can extract URLs
+        search_results = tools.search(task)[:3]  # Limit to 3 results
+
+        # Step 2: Scrape & Step 3: Summarize
+        summarized_results = []  # Initialize summarized_results here
+        for url in search_results:
+            try:
+                scraped_content = tools.scrape_website(task, url, self.browserless_api_key)
+                summary_text = tools.summary(task, scraped_content)
+                summarized_results.append(summary_text)
+            except Exception as e:
+                print(f"Error processing URL {url}: {e}")
+
+        # Update chat_env with the summarized results
+        chat_env.env_dict['research_results'] = summarized_results
+        return chat_env
+
+    def update_phase_env(self, chat_env):
+        research_results = chat_env.env_dict.get('research_results', [])
+        # Incorporate the research results in the phase environment as needed
+        # For this example, we're simply adding it to the phase_env
+        self.phase_env = {"task": chat_env.env_dict['task_prompt'], "research_results": research_results}
+
+    def update_chat_env(self, chat_env) -> ChatEnv:
+        if len(self.seminar_conclusion) > 0 and "<INFO>" in self.seminar_conclusion:
+            chat_env.env_dict['research_results'] = self.seminar_conclusion.split("<INFO>")[-1].lower().replace(".", "").strip()
+        elif len(self.seminar_conclusion) > 0:
+            chat_env.env_dict['research_results'] = self.seminar_conclusion
+        else:
+            chat_env.env_dict['research_results'] = "No research results"
+        log_and_print_online("**[Research Results]**:\n\n {}".format(get_info(chat_env.env_dict['directory'],self.log_filepath)))
+        return chat_env
 
 class IdeaGeneration(Phase):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
     def update_phase_env(self, chat_env):
-        self.phase_env = {"task": chat_env.env_dict['task_prompt']}
+        research_results = chat_env.env_dict.get('research_results', [])
+        # Incorporate the research results in the phase environment as needed
+        # For this example, we're simply adding it to the phase_env
+        self.phase_env = {"task": chat_env.env_dict['task_prompt'], "research_results": research_results}
 
     def update_chat_env(self, chat_env) -> ChatEnv:
         if len(self.seminar_conclusion) > 0 and "<INFO>" in self.seminar_conclusion:
@@ -361,6 +406,7 @@ class ContentGeneration(Phase):
         log_and_print_online("**[content]**: \n\n {}".format(get_info(chat_env.env_dict['directory'],self.log_filepath)))
         
         return chat_env
+
 
 class LanguageChoose(Phase):
     def __init__(self, **kwargs):

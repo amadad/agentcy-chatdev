@@ -1,0 +1,29 @@
+[2023-10-09 23:09:35 INFO] **[Preprocessing]**
+
+**ChatDev Starts** (20230910230933)
+
+**Timestamp**: 20230910230933
+
+**config_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Agency/ChatChainConfig.json
+
+**config_phase_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Agency/PhaseConfig.json
+
+**config_role_path**: /Users/amadad/Projects/ChatDev/CompanyConfig/Agency/RoleConfig.json
+
+**task_prompt**: cruise line launch
+
+**project_name**: cruise2
+
+**Log File**: /Users/amadad/Projects/ChatDev/WareHouse/cruise2_DefaultOrganization_20230910230933.log
+
+**ChatDevConfig**:
+ ChatEnvConfig.clear_structure: True
+ChatEnvConfig.brainstorming: False
+
+
+**ChatGPTConfig**:
+ ChatGPTConfig(temperature=0.2, top_p=1.0, n=1, stream=False, stop=None, max_tokens=None, presence_penalty=0.0, frequency_penalty=0.0, logit_bias={}, user='')
+
+
+
+[2023-10-09 23:09:35 INFO] flask app.py did not start for online log

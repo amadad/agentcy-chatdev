@@ -14,14 +14,8 @@ from chatdev.statistics import get_info
 from chatdev.utils import log_and_print_online, now
 
 
-#def check_bool(s):
-#    return s.lower() == "true"
-
 def check_bool(s):
-    if isinstance(s, bool):
-        return s
     return s.lower() == "true"
-
 
 
 class ChatChain:
@@ -58,7 +52,6 @@ class ChatChain:
         with open(self.config_phase_path, 'r', encoding="utf8") as file:
             self.config_phase = json.load(file)
         with open(self.config_role_path, 'r', encoding="utf8") as file:
-
             self.config_role = json.load(file)
 
         # init chatchain config and recruitments

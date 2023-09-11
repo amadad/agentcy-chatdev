@@ -15,7 +15,6 @@ import argparse
 import logging
 import os
 import sys
-import streamlit as st
 import openai
 
 from dotenv import load_dotenv
@@ -90,8 +89,7 @@ chat_chain = ChatChain(config_path=config_path,
                        config_role_path=config_role_path,
                        task_prompt=args.task,
                        project_name=args.name,
-                       org_name=args.org,
-                       model_type=args2type[args.model])
+                       org_name=args.org)
 
 # ----------------------------------------
 #          Init Log
