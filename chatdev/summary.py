@@ -15,6 +15,7 @@ from typing import Type
 from bs4 import BeautifulSoup
 import requests
 import json
+import logging
 from langchain.schema import SystemMessage
 
 load_dotenv()
@@ -25,11 +26,33 @@ from langchain.chat_models import ChatOpenAI
 
 llm = ChatOpenAI()
 
-# 1. Tool for search
+# Create a custom logger
+logger = logging.getLogger(__name__)
 
+# Set level of logger
+logger.setLevel(logging.DEBUG)
+
+# Create handlers
+c_handler = logging.StreamHandler()
+f_handler = logging.FileHandler('file.log')
+
+# Set level of handlers
+c_handler.setLevel(logging.DEBUG)
+f_handler.setLevel(logging.DEBUG)
+
+# Create formatters and add it to handlers
+c_format = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+f_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+c_handler.setFormatter(c_format)
+f_handler.setFormatter(f_format)
+
+# Add handlers to the logger
+logger.addHandler(c_handler)
+logger.addHandler(f_handler)
+
+# 1. Tool for search
 def search(query):
     url = "https://google.serper.dev/search"
- 
     payload = json.dumps({
         "q": query
     })
@@ -39,22 +62,18 @@ def search(query):
         'Content-Type': 'application/json'
     }
 
-    response = requests.request("POST", url, headers=headers, data=payload)
+    response = requests.post(url, headers=headers, data=payload)
 
-    print(response.text)
-
-    return response.text
-
+    if response.status_code == 200:
+        return response.text
+    else:
+        print(f"Request failed with status code {response.status_code}")
+        return None
 
 # 2. Tool for scraping
-
 def scrape_website(objective: str, url: str, browserless_api_key: str):
-    # Scrape a website and perform summarization if the content is too large.
-    # - objective: The original objective & task provided by the user.
-    # - url: The URL of the website to be scraped.
-    # - browserless_api_key: API key for browserless.io service.
-
     try:
+        logger.debug('Scraping URL: %s', url)
         print("Scraping website...")
         # Define the headers for the request
         headers = {
@@ -73,7 +92,9 @@ def scrape_website(objective: str, url: str, browserless_api_key: str):
         # Send the POST request
         post_url = f"https://chrome.browserless.io/content?token={browserless_api_key}"
         response = requests.post(post_url, headers=headers, data=data_json)
-        response.raise_for_status()  # Raise an exception for 4xx and 5xx status codes
+
+        # Pause for 1 second to rate limit
+        time.sleep(1)
 
         soup = BeautifulSoup(response.content, "html.parser")
         text = soup.get_text()
@@ -89,6 +110,11 @@ def scrape_website(objective: str, url: str, browserless_api_key: str):
             print("Scraped content is empty.")
             return ""  # Return an empty string if content is empty
 
+    except requests.exceptions.HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')
+        print(response.text)
+        return ""  # Return an empty string on HTTP error
+
     except requests.exceptions.RequestException as req_ex:
         print(f"HTTP request failed: {req_ex}")
         return ""  # Return an empty string on request failure
@@ -96,11 +122,6 @@ def scrape_website(objective: str, url: str, browserless_api_key: str):
     except Exception as e:
         print(f"Error during web scraping: {e}")
         return ""  # Return an empty string on other errors
-
-# Example usage:
-# scraped_content = scrape_website("Objective", "https://example.com", "your_browserless_api_key_here")
-
-
 
 def summary(objective, content):
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
@@ -128,14 +149,12 @@ def summary(objective, content):
 
     return output
 
-
 class ScrapeWebsiteInput(BaseModel):
     """Inputs for scrape_website"""
     objective: str = Field(
         description="The objective & task that users give to the agent")
     url: str = Field(description="The url of the website to be scraped")
-
-
+    
 class ScrapeWebsiteTool(BaseTool):
     name = "scrape_website"
     description = "useful when you need to get data from a website url, passing both url and objective to the function; DO NOT make up any url, the url should only be from the search results"
@@ -171,7 +190,6 @@ system_message = SystemMessage(
             6/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
             7/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
 )
-
 
 agent_kwargs = {
     "extra_prompt_messages": [MessagesPlaceholder(variable_name="memory")],
