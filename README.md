@@ -18,6 +18,7 @@
 
 * This is an experimental fork of ChatDev that implements Research Agent 2.0 from Jason Zhou
 * More frameworks and roles coming soon
+* For research purposes only--not intended for commerical application
 
 ## ❓ What Can Agentcy Do?
 
@@ -56,11 +57,3 @@ Coming soon.
 - The source code is licensed under Apache 2.0.
 - The datasets are licensed under CC BY NC 4.0, which allows for non-commercial use only. It is important to note that
   any models trained using these datasets should not be employed for purposes other than research.
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=openbmb/chatdev&type=Date)](https://star-history.com/#openbmb/chatdev&Date)
-
-## Contact
-
-If you have any questions, feedback, or would like to get in touch, please feel free to reach out to us via email at [chatdev.openbmb@outlook.com](mailto:chatdev.openbmb@outlook.com)
