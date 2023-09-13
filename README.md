@@ -1,4 +1,4 @@
-# Communicative Agents for Software Development
+# Communicative Agents for Creative Services
 
 <p align="center">
   <img src='./misc/logo1.png' width=600>
@@ -14,11 +14,12 @@
 - The agents are provisioned with a growing list of phases, frameworks and processes to faciliate a deep and wide exploration of problem and solution space.
 - Built on the foundations of **ChatDev**
 
-## 📰 News
+## 📰 Background
 
-* **September 1, 2023: TK
+* This is an experimental fork of ChatDev that implements Research Agent 2.0 from Jason Zhou
+* More frameworks and roles coming soon
 
-## ❓ What Can ChatDev Do?
+## ❓ What Can Agentcy Do?
 
 ![intro](misc/intro.png)
 
@@ -27,13 +28,14 @@
 Coming soon.
 
 
-### ChatDev Software Contributors
+### Software Contributors
 
 <a href="https://github.com/qianc62"><img src="https://avatars.githubusercontent.com/u/48988402?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>
 <a href="https://github.com/thinkwee"><img src="https://avatars.githubusercontent.com/u/11889052?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>
 <a href="https://github.com/NA-Wen"><img src="https://avatars.githubusercontent.com/u/92134380?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>
 <a href="https://github.com/lijiahao2022"><img src="https://avatars.githubusercontent.com/u/111221887?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>
 <a href="https://github.com/GeekyWizKid"><img src="https://avatars.githubusercontent.com/u/133981481?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>
+<a href="https://github.com/JayZeeDesign"><img src="https://avatars.githubusercontent.com/u/22532527?v=4" alt="Contributor" style="width:5%; border-radius: 50%;"/></a>
 
 ## 📑 Citation
 
