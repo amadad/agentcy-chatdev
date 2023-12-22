@@ -9,6 +9,7 @@ from chatdev.chat_env import ChatEnv
 from chatdev.statistics import get_info
 from chatdev.utils import log_and_print_online, log_arguments
 from chatdev import tools
+from metaphor_python import Metaphor
 
 
 class Phase(ABC):
